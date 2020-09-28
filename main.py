@@ -109,29 +109,6 @@ if __name__ == "__main__":
     grid = qt.QGridLayout(widget)
     grid.setSpacing(15)  # отступы между виджетами
 
-    # ------------------------------------------------------------------
-    from docx import Document
-    def pashalochka():
-        doc = Document('prik.docx')
-
-        printer = Qt.QPrinter()
-        text = []
-        for paragraph in doc.paragraphs:
-            text.append(paragraph.text)
-        txt = Qt.QTextEdit()
-        text = '\n'.join(text)
-
-        txt.setHtml(text)
-
-        print_dialog = Qt.QPrintDialog(printer)
-        if print_dialog.exec() == Qt.QDialog.Accepted:
-            txt.print(printer)
-
-    prikaz_btn = qt.QPushButton("пасхалОЧКА")
-    prikaz_btn.clicked.connect(pashalochka)
-    grid.addWidget(prikaz_btn, 4, 8)
-    # ------------------------------------------------------------------
-
     grid.addWidget(dev_label, 0, 0, 1, 3)
     grid.addWidget(prod_label, 0, 3, 1, 3)
     grid.addWidget(cat_label, 0, 6, 1, 3)
