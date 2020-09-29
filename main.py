@@ -74,7 +74,7 @@ if __name__ == "__main__":
     del_btn.clicked.connect(lambda _: delete(table, link, widget, dev_table, cat_table))
 
     fill_dev_table(dev_table, link)  # заполнение таблицы разработчиков
-    # создание кнопок под таблицей товаров и привязывание функций для отклика
+    # создание кнопок под таблицей разработчиков и привязывание функций для отклика
     add_btn_dev = qt.QPushButton("Добавить")
     add_btn_dev.clicked.connect(lambda _: add_row_dev(dev_table, link, widget))
     edit_btn_dev = qt.QPushButton("Редактировать")
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     del_btn_dev.clicked.connect((lambda _: delete_dev(dev_table, link, widget, table, cat_table)))
 
     fill_cat_table(cat_table, link)  # заполнение таблицы категорий
-    # создание кнопок под таблицей товаров и привязывание функций для отклика
+    # создание кнопок под таблицей категорий и привязывание функций для отклика
     add_btn_cat = qt.QPushButton("Добавить")
     add_btn_cat.clicked.connect(lambda _: add_row_cat(cat_table, link, widget))
     edit_btn_cat = qt.QPushButton("Редактировать")
